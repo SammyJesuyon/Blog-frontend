@@ -58,7 +58,7 @@ html, body{
         width: 25%;
         height: 25px;
         color: white;
-        background-color: #4c3bd6;
+        background-color: #362812;
         border-radius: 5px;
         border-style: none;
         font-family: 'Nunito', sans-serif;
@@ -68,8 +68,8 @@ html, body{
         cursor: pointer;
         width: 30%;
         background-color: white;
-        color: #4c3bd6;
-        border: 1px solid #4c3bd6;
+        color: #362812;
+        border: 1px solid #362812;
       }
 
       .footer {
@@ -89,16 +89,28 @@ html, body{
     }
     .blogCardExtra {
       display: flex;
+      flex-direction: row-reverse;
       height: 150px;
       margin-top: 4%;
       padding: 0;
       background-color: #eeeeee;
       border-radius: 5px;
       box-shadow: 5px 5px grey;
+      overflow: hidden;
+
+      .blogImage{
+        flex: 1;
+        max-width: 40%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: whitesmoke;
+      }
 
       .blogContent {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         background-color: white;
         width: 60%;
         height: 150px;
@@ -114,11 +126,11 @@ html, body{
       }
 
       button {
-        width: 50%;
-        height: 20px;
-        margin-top: 10%;
+        width: 70%;
+        height: 25px;
+        //margin-top: 10%;
         color: white;
-        background-color: #4c3bd6;
+        background-color: #362812;
         border-radius: 3px;
         border-style: none;
         font-family: 'Nunito', sans-serif;
@@ -126,15 +138,18 @@ html, body{
       }
       button:hover{
         cursor: pointer;
-        width: 52%;
-        color: #4c3bd6;
+        width: 70%;
+        color: #362812;
         background-color: white;
-        border: 1px solid #4c3bd6;
+        border: 1px solid #362812;
       }
 
       .footer {
         margin-top: 20%;
         font-size: 11px;
+        .textCapitalized{
+          text-transform: capitalize;
+        }
       }
     }
   }

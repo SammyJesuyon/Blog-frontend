@@ -15,10 +15,10 @@ const MainLayout = (props) => {
             <div className="navRight">
 
                 {/*Link is used instead of a tag because the href in a tag might not be secure for react*/}
-                <div className="navLinks modal">
-                    <h3 onClick={toggleOpen}>Modal</h3>
-                    {openModal && <Modal closeModal={setOpenModal}/>}
-                </div>
+                {/*<div className="navLinks modal">*/}
+                {/*    <h3 onClick={toggleOpen}>Modal</h3>*/}
+                {/*    {openModal && <Modal closeModal={setOpenModal}/>}*/}
+                {/*</div>*/}
 
 
                 <div className="navLinks">

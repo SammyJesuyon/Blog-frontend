@@ -25,7 +25,8 @@ const BlogCard = (props) => {
 
                 <div className="footer">
                     <span className="textCapitalized">
-                        Created by {props.data.author.username}, on {moment(new Date(props.data.created_at)).format('YYYY-MM-DD')}
+                        Created by {props.data.author.username}, on {
+                        moment(new Date(props.data.created_at)).format('YYYY-MM-DD')}
                     </span> {/*to style the date - npm import moment*/}
                 </div>
             </div>

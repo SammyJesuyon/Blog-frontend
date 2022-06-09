@@ -11,6 +11,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import MainLayout from "../../layouts/mainlayout";
 import BlogCard from "../../common/blogCard";
 import BlogCardExtra from "../../common/blogCardExtra";
+import BlogCommon from "../../common/topBlogs";
 
 
 const Home = (props) => {
@@ -62,10 +63,7 @@ const Home = (props) => {
 
                 <div className="blogExtras">
                         <h4>Top Blogs</h4>
-                        <BlogCardExtra />
-                        <BlogCardExtra />
-                        <BlogCardExtra />
-                        <BlogCardExtra />
+                        <BlogCommon />
                 </div>
             </div>
         </div>

@@ -10,6 +10,7 @@ import {BLOG_URL} from "../../utils/urls";
 import Skeleton from "react-loading-skeleton";
 import {useParams} from "react-router-dom";
 import moment from "moment";
+import BlogCommon from "../../common/topBlogs";
 
 
 const SingleBlog = (props) => {
@@ -70,10 +71,7 @@ const SingleBlog = (props) => {
 
                     <div className='blogExtras'>
                         <h4>Related Blogs</h4>
-                        <BlogCardExtra />
-                        <BlogCardExtra />
-                        <BlogCardExtra />
-                        <BlogCardExtra />
+                        {!fetching && <BlogCommon similar id={activeBlog.id} />}
                     </div>
                 </div>
             </div>
