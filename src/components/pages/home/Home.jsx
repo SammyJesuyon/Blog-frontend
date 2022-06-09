@@ -10,22 +10,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; //to use this 
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import MainLayout from "../../layouts/mainlayout";
 import BlogCard from "../../common/blogCard";
-import BlogCardExtra from "../../common/blogCardExtra";
+// import BlogCardExtra from "../../common/blogCardExtra";
 import BlogCommon from "../../common/topBlogs";
 
 
 const Home = (props) => {
-    const [fetching, setFetching] = useState(true)
-    const [blogList, setBlogList] = useState([])
+    const [fetching, setFetching] = useState(true);
+    const [blogList, setBlogList] = useState([]);
+    const [search, setSearch] = useState("");
+    let debouncer;
 
     useEffect( () => {
-        getBlogContent();
-    }, [])
+        clearTimeout(debouncer)
+        debouncer = setTimeout( () => {
+            let extra = `?keyword=${search}`;
+            getBlogContent(extra)
+        }, 1000)
+    }, [search])
 
-    const getBlogContent = () => {
+    const getBlogContent = (extra='') => {
         {/*The then() method returns a Promise. It takes up to two arguments:
         callback functions for the success and failure cases of the Promise.*/}
-        axios.get(BLOG_URL).then(res => {
+        axios.get(BLOG_URL + extra).then(res => {
             setBlogList(res.data); //after the data has been fetched
             setFetching(false); //setFetch stops getting data
             // console.log(res.data)
@@ -42,7 +48,10 @@ const Home = (props) => {
 
                 <div className="searchBlog">
                     <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon"/>
-                    <input placeholder="Search blog contents"/>
+                    <input placeholder="Search blog contents"
+                           value={search}
+                           onChange={(e) => setSearch(e.target.value)}
+                    />
                 </div>
             </div>
             <div className="blogListContainer">
